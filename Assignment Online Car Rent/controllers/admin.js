@@ -1,7 +1,7 @@
 var express = require('express');
 
 var userModel = require('./../models/admin');
-var userModel = require('./../models/member');
+
 
 
 
@@ -137,6 +137,33 @@ router.get('/renthistory', function(req, res){
 		userModel.getrenthistory(function(results){
 			
 				res.render('history/historyinfo', {history: results});
+			
+		});
+});
+
+router.get('/blog', function(req, res){
+
+		userModel.getblog(function(results){
+			
+				res.render('history/blog', {blog: results});
+			
+		});
+});
+
+router.get('/renthistory', function(req, res){
+
+		userModel.getrenthistory(function(results){
+			
+				res.render('history/historyinfo', {history: results});
+			
+		});
+});
+
+router.get('/blog', function(req, res){
+
+		userModel.getblog(function(results){
+			
+				res.render('history/blog', {blog: results});
 			
 		});
 });

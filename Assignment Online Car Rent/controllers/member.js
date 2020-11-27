@@ -5,6 +5,7 @@ var userModel = require('./../models/member');
 
 
 
+
 var router = express.Router();
 
 //Admin 
@@ -80,5 +81,13 @@ router.get('/renthistory', function(req, res){
 		});
 });
 
+router.get('/blog', function(req, res){
+
+		userModel.getblog(function(results){
+			
+				res.render('history/blog', {blog: results});
+			
+		});
+});
 
 module.exports = router;

@@ -318,4 +318,31 @@ memberdelete : function(id, callback){
 		});
 	},						
 
+
+
+	getrenthistory: function(callback){
+		var sql = "select * from history  ";
+
+		db.getResults(sql, function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
+
+	getblog: function(callback){
+		var sql = "select * from blog  ";
+
+		db.getResults(sql, function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
 }
